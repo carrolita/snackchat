@@ -19,7 +19,7 @@ class Home extends Component {
 
   render() {
     return (
-      <div className="container-fluid">
+      <div className="container-fluid snack-gradient">
         <div className="row justify-content-center snack-row-hero">
           <div className="col-sm-12 col-md-12 text-center">¨
             <span className="display-1 snack-title welcome-text">Welcome to snackchat</span>

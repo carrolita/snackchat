@@ -7,11 +7,12 @@ import uuid from 'uuid/v4';
 
 class Chat extends Component {
   state = {
-    nickName: 'none',
+    nickName: '',
     messages: {},
     name: '',
     roomId: null,
-    inputMessage: ''
+    inputMessage: '',
+    inputNickName: ''
   }
 
   componentWillMount() {
@@ -68,10 +69,28 @@ class Chat extends Component {
   render() {
     const { match } = this.props;
     return (
-      <div className="container-fluid h-100 flex-column d-flex">
+      <div className="container h-100 flex-column d-flex chat-container">
+        {
+          this.state.nickName === '' &&
+            <div className={'snack-overlay container-fluid d-flex flex-column justify-content-center'}>
+              <div className={'row justify-content-center'}>
+                <div className={'col-6 snack-box'}>
+                  <form onSubmit={this.onNickNameSubmit}>
+                    <div className="form-group">
+                      <label htmlFor="exampleInputEmail1">Nickname</label>
+                      <input type="text" className="form-control" id="nickname" aria-describedby="emailHelp"
+                             placeholder="Enter nick name" value={this.state.inputNickName} onChange={this.onNickNameChange}/>
+                    </div>
+                    <button type="submit" className={'btn btn-primary'}>Choose</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+        }
         <div className="row">
-          <div className="col text-center">
-            <span className="display-3">Chatroom {this.state.name}</span>
+          <div className="col text-center d-flex flex-column">
+            <span className="display-3">{this.state.name}</span>
+            <span className="text-muted">{this.state.nickName}</span>
           </div>
         </div>
         <div className="row flex-grow-1 mt-5">
@@ -80,7 +99,7 @@ class Chat extends Component {
               <ul className="list-group snack-list">
                 {
                   Object.keys(this.state.messages).map(key => (
-                    <li className="speech-bubble d-flex flex-column" key="key">
+                    <li className={`speech-bubble d-flex flex-column ${this.state.messages[key].from === this.state.nickName ? 'self' : ''}`} key="key">
                       <span className="text-muted">{this.state.messages[key].from}</span>
                       <span>{this.state.messages[key].message}</span>
                     </li>
@@ -100,6 +119,24 @@ class Chat extends Component {
         </div>
       </div>
     );
+  }
+
+  onNickNameSubmit = (event) => {
+    event.preventDefault();
+
+    this.setState({
+      nickName: this.state.inputNickName,
+      inputNickName: ''
+    }, () => {
+      const { id } = this.props.match.params;
+      localStorage.setItem(`chatroom-nickname:${id}`, this.state.nickName)
+    })
+  }
+
+  onNickNameChange = (event) => {
+    this.setState({
+      inputNickName: event.target.value
+    })
   }
 
   onMessageChange = (event) => {

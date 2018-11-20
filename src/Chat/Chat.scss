@@ -27,23 +27,49 @@
   width: 300px;
   border-radius: 10px;
   background-color: white;
-}
 
-.speech-bubble:after {
-	content: '';
-	position: absolute;
-	right: 0;
-	top: 50%;
-	width: 0;
-	height: 0;
-	border: 27px solid transparent;
-	border-left-color: white;
-	border-right: 0;
-	border-bottom: 0;
-	margin-top: -8px;
-	margin-right: -27px;
+  &:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border: 27px solid transparent;
+    border-left-color: white;
+    border-right: 0;
+    border-bottom: 0;
+    margin-top: -8px;
+    margin-right: -27px;
+  }
+
+  &.self {
+    background-color: lightblue;
+    &:after {
+      border-left-color: lightblue;
+    }
+  }
 }
 
 .snack-list {
   list-style: none;
+}
+
+.chat-container {
+  height: 100%;
+  overflow: hidden;
+}
+
+.snack-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, .7);
+  z-index: 10;
+}
+
+.snack-box {
+  background-color: white;
 }
