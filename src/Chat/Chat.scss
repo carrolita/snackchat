@@ -1,0 +1,49 @@
+.message-section {
+  height: 100%;
+  max-height: 100%;
+  overflow: scroll;
+  background-image: linear-gradient(to right, #D1C4E9
+ , #EDE7F6);
+}
+
+.col-overflow {
+  overflow: hidden;
+}
+
+.input-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-image: linear-gradient(to right, #4527A0 , #673AB7);
+  padding: 32px 32px;
+}
+
+.speech-bubble {
+	position: relative;
+	background: #E0F7FA;
+	border: 15px solid transparent;
+  margin: 16px;
+  padding: 16px;
+  width: 300px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.speech-bubble:after {
+	content: '';
+	position: absolute;
+	right: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 27px solid transparent;
+	border-left-color: white;
+	border-right: 0;
+	border-bottom: 0;
+	margin-top: -8px;
+	margin-right: -27px;
+}
+
+.snack-list {
+  list-style: none;
+}

@@ -1,25 +1,27 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import AddNickname from './AddNickname/AddNickname';
+import Footer from './Footer/Footer.js';
+import Chat from './Chat/Chat';
+import Home from './Home/Home';
+import NotFound from './NotFound/NotFound';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { Route, Switch } from 'react-router';
+import CreateChat from './CreateChat/CreateChat';
 import './App.css';
+
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Router>
+          <Switch>
+            <Route path="/" exact component={Home}/>
+            <Route path="/chat/:id" component={Chat}/>
+            <Route path="/create-chat" exact component={CreateChat}/>
+            <Route path="**" component={NotFound}/>
+          </Switch>
+        </Router>
       </div>
     );
   }

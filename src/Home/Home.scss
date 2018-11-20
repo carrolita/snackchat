@@ -1,0 +1,84 @@
+.home-container {
+  background-color: #6200EE;
+  padding: 30px;
+  color: white;
+  box-shadow: 2px 2px 5px gray;
+}
+
+.home-button {
+  background-color: #03DAC5 !important;
+}
+
+.home-intro-text {
+  display: flex;
+  justify-content: center;
+  font-size: 28px;
+  margin: 78px;
+}
+
+.chat-benefit-text {
+  font-size: 12px;
+}
+
+.guest-button {
+  margin-top: 22px;
+}
+
+.snack-row {
+  padding: 156px 0;
+}
+
+.snack-row-hero {
+  padding: 256px 0;
+  background-image: url('/pizzas1.jpg');
+  background-repeat: repeat;
+  background-blend-mode: lighten;
+  background-size: 900px;
+}
+
+.snack-row-purple {
+  padding: 156px 0;
+  background-color: #EEEEEE;
+}
+
+.snack-lead {
+  font-weight: bold;
+  font-size: 24px;
+  text-shadow: 1px 1px 1px black;
+  color: black;
+  background-color: #FFFF00;
+  padding: 8px;
+}
+
+.snack-title {
+  text-shadow: 1px 1px 1px gray;
+}
+
+.chatbubbles-home {
+  display: block;
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+  margin: 0;
+  background: radial-gradient(circle at 100px 100px, white,
+          #ffccf2);
+}
+
+.get-started-button {
+  background-color: #37474F !important;
+  border: 0.1px solid gray;
+  box-shadow: 4px 4px 7px lightgray;
+}
+
+.get-started-button:hover {
+  background-color: #263238 !important;
+  border: 0.5px solid lightgray;
+}
+
+.container-fluid {
+  background-image: linear-gradient(to right, #F9A825, yellow);
+}
+
+.welcome-text {
+  text-shadow: 3px 3px black;
+}

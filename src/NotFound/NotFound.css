@@ -1,0 +1,9 @@
+.notFound-text {
+  font-size: 78px;
+  background-color: #311B92;
+  color: white;
+  display: flex;
+  justify-content: center;
+  margin-top: 200px;
+  box-shadow: 2px 2px 5px gray;
+}
