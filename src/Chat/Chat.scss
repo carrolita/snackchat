@@ -1,5 +1,6 @@
 
 .message-section {
+  display: block;
   height: 100%;
   max-height: 100%;
   overflow: scroll;
@@ -44,7 +45,6 @@
 
 .chat-container {
   height: 100%;
-  overflow: hidden;
   background-color: #424242;
 }
 
@@ -82,4 +82,19 @@
 
 .send-message-button:hover {
   background-color: #01579B !important;
+}
+
+.chat-header {
+  height: 96px;
+  overflow: hidden;
+}
+
+.chat-footer {
+  height: 96px;
+  overflow: hidden;
+}
+
+.chat-main {
+  height: calc(100vh - 96px * 2);
+  overflow: hidden;
 }

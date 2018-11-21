@@ -29,7 +29,7 @@ class Home extends Component {
           </div>
         </div>
         <div className="row justify-content-center snack-row-purple">
-          <div className="col-sm-12 col-md-2 text-right">¨
+          <div className="col-sm-12 col-md-2 text-sm-left text-md-right">
             <span className="display-1">3000</span>
           </div>
           <div className="col-sm-12 col-md-2 text-left">
@@ -45,9 +45,9 @@ class Home extends Component {
                     <span className="display-4 snack-title">Some of snackchats most popular</span>
                   </div>
                 </div>
-                <div className="row justify-content-center mt-5">
-                  <div className="col-sm-6">
-                    <ul>
+                <div className="row justify-content-center">
+                  <div className="col-sm-12 col-md-6">
+                    <ul className="snack-ul">
                       {
                         this.state.rooms.map(room => (
                           <Link key={room.roomId} to={'/chat/' + room.roomId} className=" chat-list list-group-item d-flex justify-content-between align-items-center">

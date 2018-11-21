@@ -51,7 +51,7 @@
 }
 
 .snack-title {
-  text-shadow: 1px 1px 1px gray;
+  text-shadow: 0.5px 0.5px 0.5px black;
 }
 
 .get-started-button {
@@ -79,4 +79,9 @@
   color: white;
   border-radius: 2px;
   font-family: 'Black Han Sans', sans-serif;
+}
+
+.snack-ul {
+  margin: 0;
+  padding: 0;
 }

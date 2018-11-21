@@ -40,7 +40,7 @@ class Chat extends Component {
                 return obj;
               }, {})
             });
-          });
+          }).then(() => this.scrollToBottom());
       });
 
     this.socket = io(process.env.REACT_APP_SERVER_URL, {
@@ -58,6 +58,7 @@ class Chat extends Component {
         this.setState({
           messages: messages
         });
+        this.scrollToBottom();
       });
     });
 
@@ -69,7 +70,7 @@ class Chat extends Component {
   render() {
     const { match } = this.props;
     return (
-      <div className="container-fluid h-100 flex-column d-flex chat-container">
+      <div className="h-100 chat-container">
         {
           this.state.nickName === '' &&
             <div className={'snack-overlay container-fluid d-flex flex-column justify-content-center'}>
@@ -87,35 +88,29 @@ class Chat extends Component {
               </div>
             </div>
         }
-        <div className="row">
-          <div className="col text-center d-flex flex-column">
-            <span className="display-3">{this.state.name}</span>
-            <span className="text-muted">{this.state.nickName}</span>
+        <div className="chat-header text-center d-flex flex-column">
+          <span className="display-3">{this.state.name}</span>
+          <span className="text-muted">{this.state.nickName}</span>
+        </div>
+        <div className="chat-main">
+          <div className="message-section">
+            <ul className="list-group snack-list">
+              {
+                Object.keys(this.state.messages).map(key => (
+                  <li ref={el => { this.messageView = el; }} className={`speech-bubble d-flex flex-column ${this.state.messages[key].from === this.state.nickName ? 'self' : ''}`} key="key">
+                    <span className="text-muted">{this.state.messages[key].from}</span>
+                    <span>{this.state.messages[key].message}</span>
+                  </li>
+                ))
+              }
+            </ul>
           </div>
         </div>
-        <div className="row flex-grow-1 mt-5">
-          <div className="col col-overflow">
-            <div className="message-section">
-              <ul className="list-group snack-list">
-                {
-                  Object.keys(this.state.messages).map(key => (
-                    <li className={`speech-bubble d-flex flex-column ${this.state.messages[key].from === this.state.nickName ? 'self' : ''}`} key="key">
-                      <span className="text-muted">{this.state.messages[key].from}</span>
-                      <span>{this.state.messages[key].message}</span>
-                    </li>
-                  ))
-                }
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div className="row justify-content-center">
-          <div className="col justify-content-center">
-            <form className="input-section" onSubmit={this.sendMessage}>
-              <input className="form-control form-control-lg" onChange={this.onMessageChange} value={this.state.inputMessage} />
-              <button type="submit" className="send-message-button btn btn-primary btn-lg">send</button>
-            </form>
-          </div>
+        <div className="chat-footer justify-content-center">
+          <form className="input-section" onSubmit={this.sendMessage}>
+            <input className="form-control form-control-lg" onChange={this.onMessageChange} value={this.state.inputMessage} />
+            <button type="submit" className="send-message-button btn btn-primary btn-lg">send</button>
+          </form>
         </div>
       </div>
     );
@@ -144,6 +139,12 @@ class Chat extends Component {
       inputMessage: event.target.value
     });
 
+  }
+
+  scrollToBottom = () => {
+    if(this.messageView) {
+      this.messageView.scrollIntoView({ behavior: 'smooth' });
+    }
   }
 
   sendMessage = (event) => {
