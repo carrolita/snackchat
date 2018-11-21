@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './Home.scss';
-import {Link} from 'react-router-dom';
+import {BrowserRouter as Router, Link} from 'react-router-dom';
 
 
 class Home extends Component {
@@ -78,6 +78,7 @@ class Home extends Component {
             </div>
           </div>
         </div>
+        <div className="clearfix"></div>
       </div>
     );
   }
