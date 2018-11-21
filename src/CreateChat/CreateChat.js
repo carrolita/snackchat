@@ -29,31 +29,6 @@ class CreateChat extends Component {
             </form>
           </div>
         </div>
-        <div class="row link-information-text justify-content-center mt-5">
-          <div className="col-sm-12 col-md-6 link-information-text">
-            <p className="tips-text">
-              Few small tips to know before creating your own chatroom:
-            </p>
-            <p>
-              1️⃣ You will need to invite people to your chatroom, otherwise it will be forever empty!
-            </p>
-            <p>
-              2️⃣ Every chatroom has its own unique number. Example of two different chatrooms:
-            </p>
-            <p>
-              http://www.e-chat.co/room/1
-            </p>
-            <p>
-              http://www.e-chat.co/room/40
-            </p>
-            <p>
-              3️⃣ To invite people to your chatroom, you will need to send the link to e-chat website with your room number. You will get the number once you create the chatroom.
-            </p>
-            <p>
-              4️⃣ As a chatroom owner you will get access to the moderator panel, where you can customize your chatroom. In addition, you will be able to kick/ban people and remove messages from the chat. We are planning to build more features soon
-            </p>
-            </div>
-        </div>
       </div>
     )
   }
