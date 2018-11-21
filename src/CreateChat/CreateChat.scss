@@ -1,6 +1,6 @@
 
 .create-chat-container {
-  background-color: #6200EE;
+  background-image: linear-gradient(to right, #311B92, #651FFF);
   color: white;
   padding: 22px;
   box-shadow: 2px 2px 5px gray;
@@ -14,9 +14,20 @@
 }
 
 .create-button {
-  background-color: #03DAC5 !important;
+  background-color: #1DE9B6 !important;
+  color: black;
+  font-weight: bold;
+}
+
+.create-button:hover {
+  background-color: #00BFA5 !important;
+  color: black !important;
 }
 
 .tips-text {
   font-weight: bold;
+}
+
+.create-chat-text {
+  font-size: 31px;
 }

@@ -69,7 +69,7 @@ class Chat extends Component {
   render() {
     const { match } = this.props;
     return (
-      <div className="container h-100 flex-column d-flex chat-container">
+      <div className="container-fluid h-100 flex-column d-flex chat-container">
         {
           this.state.nickName === '' &&
             <div className={'snack-overlay container-fluid d-flex flex-column justify-content-center'}>

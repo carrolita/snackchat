@@ -13,7 +13,7 @@ class CreateChat extends Component {
   render(){
     return(
       <div className="container">
-        <h3 className="text">Create your own chatroom</h3>
+        <h3 className="text display-5 snack-title create-chat-text">Create your own chatroom</h3>
         <div className="row justify-content-center">
           <div className="col-sm-12 col-md-6">
             <form className="create-chat-container" onSubmit={this.handleSubmit}>

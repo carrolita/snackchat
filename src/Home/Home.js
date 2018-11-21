@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import './Home.scss';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 
 class Home extends Component {
@@ -14,7 +14,7 @@ class Home extends Component {
       .then((data) => this.setState({
         rooms: data
       }))
-        .catch(err => console.error(err))
+      .catch(err => console.error(err))
   }
 
   render() {
@@ -39,15 +39,26 @@ class Home extends Component {
         <div className="row justify-content-center snack-row">
           <div className="col">
             <div className="row">
-              <div className="col text-center">
-                <span className="display-4 snack-title">Some of snackchats most popular</span>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col text-center">
-                {
-                    this.state.rooms.map(room => <Link className="chatbubbles-home" key={room.roomId} to={'/chat/' + room.roomId}>{room.name}</Link>)
-                }
+              <div className="col">
+                <div className="row">
+                  <div className="col text-center">
+                    <span className="display-4 snack-title">Some of snackchats most popular</span>
+                  </div>
+                </div>
+                <div className="row justify-content-center mt-5">
+                  <div className="col-sm-6">
+                    <ul>
+                      {
+                        this.state.rooms.map(room => (
+                          <Link key={room.roomId} to={'/chat/' + room.roomId} className=" chat-list list-group-item d-flex justify-content-between align-items-center">
+                            {room.name}
+                            <span className="badge badge-primary badge-pill">14</span>
+                          </Link>
+                        ))
+                      }
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -61,7 +72,8 @@ class Home extends Component {
             </div>
             <div className="row justify-content-center ">
               <div className="col-sm-12 col-md-4 justify-content-center">
-                 <Link className="btn btn-primary guest-button btn-lg btn-block get-started-button" to="/create-chat">Get started</Link>
+                <Link className="btn btn-primary guest-button btn-lg btn-block get-started-button" to="/create-chat">Get
+                  started</Link>
               </div>
             </div>
           </div>

@@ -1,9 +1,11 @@
+body {
+  background-color: #424242;
+}
 .message-section {
   height: 100%;
   max-height: 100%;
   overflow: scroll;
-  background-image: linear-gradient(to right, #D1C4E9
- , #EDE7F6);
+  background-color: white;
 }
 
 .col-overflow {
@@ -14,40 +16,29 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  background-image: linear-gradient(to right, #4527A0 , #673AB7);
   padding: 32px 32px;
+  box-shadow: 1px 1px 2px black;
+  background-image: linear-gradient(to bottom right, #757575, #9E9E9E);
 }
 
 .speech-bubble {
 	position: relative;
-	background: #E0F7FA;
 	border: 15px solid transparent;
   margin: 16px;
   padding: 16px;
   width: 300px;
   border-radius: 10px;
-  background-color: white;
+  text-shadow: 1px 1px 1px gray;
+  background-color: #D3D3D3;
+  font-weight: 600;
+  box-shadow: 2px 2px 12px gray;
 
-  &:after {
-    content: '';
-    position: absolute;
-    right: 0;
-    top: 50%;
-    width: 0;
-    height: 0;
-    border: 27px solid transparent;
-    border-left-color: white;
-    border-right: 0;
-    border-bottom: 0;
-    margin-top: -8px;
-    margin-right: -27px;
-  }
 
   &.self {
-    background-color: lightblue;
-    &:after {
-      border-left-color: lightblue;
-    }
+    background-color: #b3e0ff;
+    color: white;
+    font-weight: 600;
+    box-shadow: 1px 1px 6px gray;
   }
 }
 
@@ -72,4 +63,12 @@
 
 .snack-box {
   background-color: white;
+  padding: 38px;
+  background-image: linear-gradient(to right, #311B92, #651FFF);
+  color: white;
+  box-shadow: 1px 1px 5px black;
+}
+
+.display-3 {
+  color: white;
 }
