@@ -14,14 +14,16 @@
 }
 
 .create-button {
-  background-color: #1DE9B6 !important;
-  color: black;
+  background-color: #4FC3F7 !important;
   font-weight: bold;
+  border: 0.1px solid gray;
+  box-shadow: 1px 1px 1px black;
+  border: 0.5px solid #00B0FF;
 }
 
 .create-button:hover {
-  background-color: #00BFA5 !important;
-  color: black !important;
+  background-color: #01579B !important;
+  border: 0.5px solid #01579B;
 }
 
 .tips-text {

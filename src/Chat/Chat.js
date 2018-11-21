@@ -113,7 +113,7 @@ class Chat extends Component {
           <div className="col justify-content-center">
             <form className="input-section" onSubmit={this.sendMessage}>
               <input className="form-control form-control-lg" onChange={this.onMessageChange} value={this.state.inputMessage} />
-              <button type="submit" className="btn btn-primary btn-lg">send</button>
+              <button type="submit" className="send-message-button btn btn-primary btn-lg">send</button>
             </form>
           </div>
         </div>
