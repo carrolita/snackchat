@@ -13,19 +13,19 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  height: 100%;
+  min-height: 100%;
 }
 
 html {
   margin: 0;
   padding: 0;
-  height: 100%;
+  min-height: 100%;
 }
 
 #root {
   margin: 0;
   padding: 0;
-  height: 100%;
+  min-height: 100%;
 }
 
 code {

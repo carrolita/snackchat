@@ -1,5 +1,5 @@
 
 .App {
-  height: 100%;
-  overflow: auto;
+  min-height: 100%;
+  display: block;
 }
